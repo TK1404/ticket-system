@@ -29,14 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.termineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.heuteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.innerhalbEinerWocheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.späterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vergangeneTermineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Heute");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Innerhalb einer Woche");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Später");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Vergangene Termine");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Termine", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Supportfall");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Anpassung");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Anfrage");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Kategorien", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7,
+            treeNode8});
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,9 +58,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ticketSystemDBDataSet = new Ticket_System.TicketSystemDBDataSet();
-            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ticketsTableAdapter = new Ticket_System.TicketSystemDBDataSetTableAdapters.TicketsTableAdapter();
             this.ticketIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,88 +65,18 @@
             this.firmaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ansprechpartnerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.beschreibungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ticketSystemDBDataSet = new Ticket_System.TicketSystemDBDataSet();
+            this.ticketsTableAdapter = new Ticket_System.TicketSystemDBDataSetTableAdapters.TicketsTableAdapter();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.treeView2 = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketSystemDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketSystemDBDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Stubert",
-            "Renner",
-            "Giebeler",
-            "Akbayin",
-            "Nickelsen",
-            "Kirchmann"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // toolStripContainer1
-            // 
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.comboBox1);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.menuStrip1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(150, 784);
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 1);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(150, 809);
-            this.toolStripContainer1.TabIndex = 2;
-            this.toolStripContainer1.Text = "toolStripContainer1";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.termineToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(37, 382);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(71, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // termineToolStripMenuItem
-            // 
-            this.termineToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.heuteToolStripMenuItem,
-            this.innerhalbEinerWocheToolStripMenuItem,
-            this.späterToolStripMenuItem,
-            this.vergangeneTermineToolStripMenuItem});
-            this.termineToolStripMenuItem.Name = "termineToolStripMenuItem";
-            this.termineToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.termineToolStripMenuItem.Text = "Termine";
-            // 
-            // heuteToolStripMenuItem
-            // 
-            this.heuteToolStripMenuItem.Name = "heuteToolStripMenuItem";
-            this.heuteToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.heuteToolStripMenuItem.Text = "Heute";
-            // 
-            // innerhalbEinerWocheToolStripMenuItem
-            // 
-            this.innerhalbEinerWocheToolStripMenuItem.Name = "innerhalbEinerWocheToolStripMenuItem";
-            this.innerhalbEinerWocheToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.innerhalbEinerWocheToolStripMenuItem.Text = "Innerhalb einer Woche";
-            // 
-            // späterToolStripMenuItem
-            // 
-            this.späterToolStripMenuItem.Name = "späterToolStripMenuItem";
-            this.späterToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.späterToolStripMenuItem.Text = "Später";
-            // 
-            // vergangeneTermineToolStripMenuItem
-            // 
-            this.vergangeneTermineToolStripMenuItem.Name = "vergangeneTermineToolStripMenuItem";
-            this.vergangeneTermineToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.vergangeneTermineToolStripMenuItem.Text = "Vergangene Termine";
             // 
             // comboBox2
             // 
@@ -265,24 +200,10 @@
             this.ansprechpartnerDataGridViewTextBoxColumn,
             this.beschreibungDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.ticketsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(150, 1);
+            this.dataGridView1.Location = new System.Drawing.Point(149, 1);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(894, 809);
+            this.dataGridView1.Size = new System.Drawing.Size(895, 809);
             this.dataGridView1.TabIndex = 16;
-            // 
-            // ticketSystemDBDataSet
-            // 
-            this.ticketSystemDBDataSet.DataSetName = "TicketSystemDBDataSet";
-            this.ticketSystemDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ticketsBindingSource
-            // 
-            this.ticketsBindingSource.DataMember = "Tickets";
-            this.ticketsBindingSource.DataSource = this.ticketSystemDBDataSet;
-            // 
-            // ticketsTableAdapter
-            // 
-            this.ticketsTableAdapter.ClearBeforeFill = true;
             // 
             // ticketIDDataGridViewTextBoxColumn
             // 
@@ -327,11 +248,97 @@
             this.beschreibungDataGridViewTextBoxColumn.HeaderText = "Beschreibung";
             this.beschreibungDataGridViewTextBoxColumn.Name = "beschreibungDataGridViewTextBoxColumn";
             // 
+            // ticketsBindingSource
+            // 
+            this.ticketsBindingSource.DataMember = "Tickets";
+            this.ticketsBindingSource.DataSource = this.ticketSystemDBDataSet;
+            // 
+            // ticketSystemDBDataSet
+            // 
+            this.ticketSystemDBDataSet.DataSetName = "TicketSystemDBDataSet";
+            this.ticketSystemDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ticketsTableAdapter
+            // 
+            this.ticketsTableAdapter.ClearBeforeFill = true;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(-1, 369);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "Knoten1";
+            treeNode1.Text = "Heute";
+            treeNode2.Name = "Knoten2";
+            treeNode2.Text = "Innerhalb einer Woche";
+            treeNode3.Name = "Knoten3";
+            treeNode3.Text = "Später";
+            treeNode4.Name = "Knoten4";
+            treeNode4.Text = "Vergangene Termine";
+            treeNode5.Name = "Knoten0";
+            treeNode5.Text = "Termine";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode5});
+            this.treeView1.Size = new System.Drawing.Size(151, 441);
+            this.treeView1.TabIndex = 17;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Stubert",
+            "Renner",
+            "Giebeler",
+            "Akbayin",
+            "Nickelsen",
+            "Kirchmann"});
+            this.comboBox1.Location = new System.Drawing.Point(12, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 18;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(1211, 444);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1092, 448);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Datum";
+            // 
+            // treeView2
+            // 
+            this.treeView2.Location = new System.Drawing.Point(-1, 48);
+            this.treeView2.Name = "treeView2";
+            treeNode6.Name = "Knoten1";
+            treeNode6.Text = "Supportfall";
+            treeNode7.Name = "Knoten2";
+            treeNode7.Text = "Anpassung";
+            treeNode8.Name = "Knoten3";
+            treeNode8.Text = "Anfrage";
+            treeNode9.Name = "Knoten0";
+            treeNode9.Text = "Kategorien";
+            this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode9});
+            this.treeView2.Size = new System.Drawing.Size(151, 324);
+            this.treeView2.TabIndex = 21;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1511, 811);
+            this.ClientSize = new System.Drawing.Size(1564, 855);
+            this.Controls.Add(this.treeView2);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label6);
@@ -345,20 +352,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.toolStripContainer1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.ContentPanel.PerformLayout();
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketSystemDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketSystemDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,14 +365,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem termineToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem heuteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem innerhalbEinerWocheToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem späterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vergangeneTermineToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -397,6 +388,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn firmaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ansprechpartnerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn beschreibungDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TreeView treeView2;
 
     }
 }
