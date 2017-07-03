@@ -16,5 +16,12 @@ namespace Ticket_System
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "ticketSystemDBDataSet.Tickets". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.ticketsTableAdapter.Fill(this.ticketSystemDBDataSet.Tickets);
+
+        }
     }
 }

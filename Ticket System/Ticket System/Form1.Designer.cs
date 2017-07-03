@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -38,7 +37,6 @@
             this.innerhalbEinerWocheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.späterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vergangeneTermineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,9 +49,23 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ticketSystemDBDataSet = new Ticket_System.TicketSystemDBDataSet();
+            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ticketsTableAdapter = new Ticket_System.TicketSystemDBDataSetTableAdapters.TicketsTableAdapter();
+            this.ticketIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bearbeiterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firmaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ansprechpartnerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.beschreibungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketSystemDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -90,7 +102,7 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.termineToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(9, 233);
+            this.menuStrip1.Location = new System.Drawing.Point(37, 382);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(71, 24);
             this.menuStrip1.TabIndex = 0;
@@ -130,21 +142,6 @@
             this.vergangeneTermineToolStripMenuItem.Name = "vergangeneTermineToolStripMenuItem";
             this.vergangeneTermineToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.vergangeneTermineToolStripMenuItem.Text = "Vergangene Termine";
-            // 
-            // listView1
-            // 
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "listViewGroup1";
-            listViewGroup2.Header = "ListViewGroup";
-            listViewGroup2.Name = "listViewGroup2";
-            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
-            this.listView1.Location = new System.Drawing.Point(150, 1);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(908, 809);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // comboBox2
             // 
@@ -255,11 +252,87 @@
             this.textBox4.Size = new System.Drawing.Size(203, 20);
             this.textBox4.TabIndex = 15;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ticketIDDataGridViewTextBoxColumn,
+            this.titelDataGridViewTextBoxColumn,
+            this.typDataGridViewTextBoxColumn,
+            this.bearbeiterDataGridViewTextBoxColumn,
+            this.firmaDataGridViewTextBoxColumn,
+            this.ansprechpartnerDataGridViewTextBoxColumn,
+            this.beschreibungDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.ticketsBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(150, 1);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(894, 809);
+            this.dataGridView1.TabIndex = 16;
+            // 
+            // ticketSystemDBDataSet
+            // 
+            this.ticketSystemDBDataSet.DataSetName = "TicketSystemDBDataSet";
+            this.ticketSystemDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ticketsBindingSource
+            // 
+            this.ticketsBindingSource.DataMember = "Tickets";
+            this.ticketsBindingSource.DataSource = this.ticketSystemDBDataSet;
+            // 
+            // ticketsTableAdapter
+            // 
+            this.ticketsTableAdapter.ClearBeforeFill = true;
+            // 
+            // ticketIDDataGridViewTextBoxColumn
+            // 
+            this.ticketIDDataGridViewTextBoxColumn.DataPropertyName = "TicketID";
+            this.ticketIDDataGridViewTextBoxColumn.HeaderText = "TicketID";
+            this.ticketIDDataGridViewTextBoxColumn.Name = "ticketIDDataGridViewTextBoxColumn";
+            this.ticketIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titelDataGridViewTextBoxColumn
+            // 
+            this.titelDataGridViewTextBoxColumn.DataPropertyName = "Titel";
+            this.titelDataGridViewTextBoxColumn.HeaderText = "Titel";
+            this.titelDataGridViewTextBoxColumn.Name = "titelDataGridViewTextBoxColumn";
+            // 
+            // typDataGridViewTextBoxColumn
+            // 
+            this.typDataGridViewTextBoxColumn.DataPropertyName = "Typ";
+            this.typDataGridViewTextBoxColumn.HeaderText = "Typ";
+            this.typDataGridViewTextBoxColumn.Name = "typDataGridViewTextBoxColumn";
+            // 
+            // bearbeiterDataGridViewTextBoxColumn
+            // 
+            this.bearbeiterDataGridViewTextBoxColumn.DataPropertyName = "Bearbeiter";
+            this.bearbeiterDataGridViewTextBoxColumn.HeaderText = "Bearbeiter";
+            this.bearbeiterDataGridViewTextBoxColumn.Name = "bearbeiterDataGridViewTextBoxColumn";
+            // 
+            // firmaDataGridViewTextBoxColumn
+            // 
+            this.firmaDataGridViewTextBoxColumn.DataPropertyName = "Firma";
+            this.firmaDataGridViewTextBoxColumn.HeaderText = "Firma";
+            this.firmaDataGridViewTextBoxColumn.Name = "firmaDataGridViewTextBoxColumn";
+            // 
+            // ansprechpartnerDataGridViewTextBoxColumn
+            // 
+            this.ansprechpartnerDataGridViewTextBoxColumn.DataPropertyName = "Ansprechpartner";
+            this.ansprechpartnerDataGridViewTextBoxColumn.HeaderText = "Ansprechpartner";
+            this.ansprechpartnerDataGridViewTextBoxColumn.Name = "ansprechpartnerDataGridViewTextBoxColumn";
+            // 
+            // beschreibungDataGridViewTextBoxColumn
+            // 
+            this.beschreibungDataGridViewTextBoxColumn.DataPropertyName = "Beschreibung";
+            this.beschreibungDataGridViewTextBoxColumn.HeaderText = "Beschreibung";
+            this.beschreibungDataGridViewTextBoxColumn.Name = "beschreibungDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1511, 811);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox3);
@@ -272,17 +345,20 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.toolStripContainer1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketSystemDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,7 +374,6 @@
         private System.Windows.Forms.ToolStripMenuItem innerhalbEinerWocheToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem späterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vergangeneTermineToolStripMenuItem;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -311,6 +386,17 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private TicketSystemDBDataSet ticketSystemDBDataSet;
+        private System.Windows.Forms.BindingSource ticketsBindingSource;
+        private TicketSystemDBDataSetTableAdapters.TicketsTableAdapter ticketsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ticketIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bearbeiterDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firmaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ansprechpartnerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn beschreibungDataGridViewTextBoxColumn;
 
     }
 }
