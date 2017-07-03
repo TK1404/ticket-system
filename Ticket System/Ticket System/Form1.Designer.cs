@@ -200,9 +200,9 @@
             this.ansprechpartnerDataGridViewTextBoxColumn,
             this.beschreibungDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.ticketsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(149, 1);
+            this.dataGridView1.Location = new System.Drawing.Point(253, -1);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(895, 809);
+            this.dataGridView1.Size = new System.Drawing.Size(791, 811);
             this.dataGridView1.TabIndex = 16;
             // 
             // ticketIDDataGridViewTextBoxColumn
@@ -278,7 +278,7 @@
             treeNode5.Text = "Termine";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode5});
-            this.treeView1.Size = new System.Drawing.Size(151, 441);
+            this.treeView1.Size = new System.Drawing.Size(256, 441);
             this.treeView1.TabIndex = 17;
             // 
             // comboBox1
@@ -326,7 +326,7 @@
             treeNode9.Text = "Kategorien";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode9});
-            this.treeView2.Size = new System.Drawing.Size(151, 324);
+            this.treeView2.Size = new System.Drawing.Size(256, 324);
             this.treeView2.TabIndex = 21;
             // 
             // Form1
